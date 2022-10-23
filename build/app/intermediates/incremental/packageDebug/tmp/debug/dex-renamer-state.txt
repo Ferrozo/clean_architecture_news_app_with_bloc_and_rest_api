@@ -1,0 +1,4 @@
+#Sun Oct 23 14:31:34 WAT 2022
+base.0=/Users/control/www/studies/flutter/clean_architecture/clean_architecture_news_app_with_bloc_and_rest_api/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
