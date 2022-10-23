@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../domain/entities/article.dart';
-import '../../presentation/views/article_details_view.dart';
-import '../../presentation/views/breaking_news_view.dart';
-import '../../presentation/views/saved_articles_view.dart';
+import '../../presentation/screen/article_details_view.dart';
+import '../../presentation/screen/breaking_news_view.dart';
+import '../../presentation/screen/saved_articles_view.dart';
 
 class AppRoutes {
   static Route onGenerateRoutes(RouteSettings settings) {

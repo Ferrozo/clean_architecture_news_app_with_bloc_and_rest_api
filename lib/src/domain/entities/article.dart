@@ -9,7 +9,7 @@ class Article extends Equatable {
     required this.title,
     required this.description,
     required this.url,
-    required this.urlImage,
+    required this.urlToImage,
     required this.publishedAt,
     required this.content,
   });
@@ -20,7 +20,7 @@ class Article extends Equatable {
   final String title;
   final String description;
   final String url;
-  final String urlImage;
+  final String urlToImage;
   final String publishedAt;
   final String content;
 
@@ -33,7 +33,7 @@ class Article extends Equatable {
         title,
         description,
         url,
-        urlImage,
+        urlToImage,
         publishedAt,
         content
       ];
