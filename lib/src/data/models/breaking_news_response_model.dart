@@ -2,10 +2,10 @@ import 'article_model.dart';
 
 class BreakingNewsResponseModel {
   BreakingNewsResponseModel(
-      {required this.status, this.totalResults, this.articles});
+      {required this.status, this.totalResults, required this.articles});
   final String status;
   final int? totalResults;
-  final List<ArticleModel>? articles;
+  final List<ArticleModel> articles;
 
   factory BreakingNewsResponseModel.fromJson(Map<String, dynamic> json) {
     return BreakingNewsResponseModel(
