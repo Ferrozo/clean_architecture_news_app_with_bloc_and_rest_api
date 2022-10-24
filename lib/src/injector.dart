@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -7,16 +8,15 @@ import 'domain/repositories/article_repository.dart';
 import 'domain/usecases/get_articles_usecase.dart';
 import 'presentation/blocs/remote_articles/remote_articles_bloc.dart';
 
-final injector = GetIt.instance;
+final getIt = GetIt.instance;
 
 Future<void> initializeDependencies() async {
-  injector.registerSingleton<Dio>(Dio());
-  injector.registerSingleton<NewsApiService>(NewsApiService(injector()));
-  injector
-      .registerSingleton<ArticleRepository>(ArticlesRepositoryImpl(injector()));
+  getIt.registerSingleton<Dio>(Dio());
 
-  injector
-      .registerSingleton<GetArticlesUsecase>(GetArticlesUsecase(injector()));
-  injector.registerFactory<RemoteArticlesBloc>(
-      () => RemoteArticlesBloc(injector()));
+  getIt.registerSingleton<NewsApiService>(NewsApiService(getIt()));
+  getIt.registerSingleton<ArticleRepository>(ArticlesRepositoryImpl(getIt()));
+
+  getIt.registerSingleton<GetArticlesUsecase>(GetArticlesUsecase(getIt()));
+
+  getIt.registerFactory<RemoteArticlesBloc>(() => RemoteArticlesBloc(getIt()));
 }
