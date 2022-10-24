@@ -4,10 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:ionicons/ionicons.dart';
 
-import '../../core/bloc/bloc_with_state.dart';
-import '../../domain/entities/article.dart';
-import '../blocs/remote_articles/remote_articles_bloc.dart';
-import '../widgets/article_widget.dart';
+import 'package:clean_architecture_news_app_and_bloc/src/core/bloc/bloc_with_state.dart';
+import 'package:clean_architecture_news_app_and_bloc/src/domain/entities/article.dart';
+import 'package:clean_architecture_news_app_and_bloc/src/presentation/blocs/remote_articles/remote_articles_bloc.dart';
+import 'package:clean_architecture_news_app_and_bloc/src/presentation/widgets/article_widget.dart';
 
 class BreakingNewsScreen extends HookWidget {
   const BreakingNewsScreen({Key? key}) : super(key: key);
@@ -18,6 +18,7 @@ class BreakingNewsScreen extends HookWidget {
     useEffect(() {
       scrollController
           .addListener(() => _onScrollListener(context, scrollController));
+      return null;
     }, [scrollController]);
 
     return Scaffold(
@@ -76,6 +77,8 @@ class BreakingNewsScreen extends HookWidget {
               builder: (context) => ArticleWidget(
                 article: e,
                 onArticlePressed: (e) => _onArticlePressed(context, e),
+                isRemovable: null,
+                onRemove: (Article article) {},
               ),
             ),
           ),
@@ -104,6 +107,10 @@ class BreakingNewsScreen extends HookWidget {
   }
 
   void _onArticlePressed(BuildContext context, articles) {
-    Navigator.pushReplacementNamed(context, '/saved_articles_view');
+    Navigator.pushReplacementNamed(context, '/article_Details_view');
+  }
+
+  void _onShowSavedArticlesViewTapped(BuildContext context) {
+    Navigator.pushNamed(context, '/saved_articles_view');
   }
 }
