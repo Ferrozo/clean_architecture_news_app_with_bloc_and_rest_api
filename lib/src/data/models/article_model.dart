@@ -3,7 +3,7 @@ import 'source_model.dart';
 
 class ArticleModel extends Article {
   const ArticleModel({
-    int? id,
+    required int id,
     required SourceModel source,
     required String author,
     required String title,
@@ -13,7 +13,7 @@ class ArticleModel extends Article {
     required String publishedAt,
     required String content,
   }) : super(
-          id: id as int,
+          id: id,
           source: source,
           author: author,
           title: title,
@@ -36,6 +36,7 @@ class ArticleModel extends Article {
       urlToImage: map['urlToImage'] as String,
       publishedAt: map['publishedAt'] as String,
       content: map['content'] as String,
+      id: map['id'] as int,
     );
   }
 }

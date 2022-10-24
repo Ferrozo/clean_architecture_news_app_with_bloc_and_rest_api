@@ -11,6 +11,6 @@ class GetArticlesUsecase
 
   @override
   Future<DataState<List<Article>>> call({ArticleRequestParams? params}) {
-    return _articleRepository.getBreajingNewsArticles(params!);
+    return _articleRepository.getBreakingNewsArticles(params!);
   }
 }
